@@ -1,0 +1,20 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<p>By: <%= @post.user&.username %></p>
+
+<h2>Comments</h2>
+<ul>
+  <% @post.comments.each do |c| %>
+    <li>
+      <%= c.content %> — <%= c.user&.username %>
+      <%= button_to "Delete", post_comment_path(@post, c), method: :delete, data: { confirm: "Delete comment?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Add a comment</h3>
+<%= form_with(model: [@post, @comment]) do |f| %>
+  <%= f.text_area :content %><br>
+  <%= f.number_field :user_id, placeholder: "User ID (temp)" %><br>
+  <%= f.submit "Add Comment" %>
+<% end %>

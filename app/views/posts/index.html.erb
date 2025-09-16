@@ -1,0 +1,17 @@
+<div>
+  <h1>Posts</h1>
+</div>
+
+<div>
+  <%= link_to "New Post", new_post_path %>
+</div>
+
+<div>
+  <ul>
+    <% @posts.each do |p| %>
+      <li>
+        <%= link_to p.title, p %> — <%= p.user&.username || "No user" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

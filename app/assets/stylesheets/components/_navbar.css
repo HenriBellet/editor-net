@@ -1,0 +1,43 @@
+:root {
+  --bs-tertiary-bg-rgb: rgb(51 51 255);
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar.navbar-expand-lg.navbar-background {
+  width: 100%;
+  background-color: rgb(5 44 101);
+  border-bottom: 1px solid black;
+  box-shadow: 0px 2px 15px black;
+}
+
+.txt-white {
+  color: white
+}
+
+.my-navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.my-navbar-nav {
+  --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
