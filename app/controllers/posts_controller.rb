@@ -50,6 +50,6 @@ class PostsController < ApplicationController
 
   # Permit :user_id for now (no auth). If you add Devise, drop :user_id and set @post.user = current_user
   def post_params
-    params.require(:post).permit(:title, :content, :user_id)
+    params.require(:post).permit(:title, :content, :video, :user_id)
   end
 end

@@ -1,0 +1,92 @@
+:root{
+  --bg-0: #0e1030;   /* deep navy */
+  --bg-1: #171542;   /* indigo */
+  --bg-2: #271a67;   /* purple-indigo */
+  --bg-3: #3a1f86;   /* brighter purple */
+  --disc: #6b5cff;   /* glow color for circles */
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  /* size/shape just for demo */
+  min-height: 100dvh;
+  overflow: hidden;
+
+  /* layered background */
+  background:
+    /* big top-right disc */
+    radial-gradient(520px 520px at 78% 22%,
+      color-mix(in oklab, var(--disc), transparent 70%),
+      transparent 60%),
+
+    /* mid disc in the middle */
+    radial-gradient(360px 360px at 55% 55%,
+      color-mix(in oklab, var(--disc), transparent 78%),
+      transparent 62%),
+
+    /* small bottom-right disc */
+    radial-gradient(300px 300px at 86% 78%,
+      color-mix(in oklab, var(--disc), transparent 75%),
+      transparent 58%),
+
+    /* base sweep (TL -> BR) */
+    linear-gradient(135deg,
+      var(--bg-0) 0%,
+      var(--bg-1) 32%,
+      var(--bg-2) 68%,
+      var(--bg-3) 100%);
+}
+
+.landing-page-wrap {
+  margin-left: 6%;
+  margin-top: 0;
+}
+
+.landing-top-container {
+  width: 100%;
+  margin-bottom: 10%;
+  margin-top: 1%;
+  flex-direction: row;
+}
+
+.landing-link {
+  text-decoration: none;
+  font-size: 1cqw;
+  margin-right: 4%;
+}
+
+.landing-link:hover {
+  color: rgb(231, 231, 231);
+}
+
+.landing-big-link {
+  text-decoration: none;
+  font-size: 3cqw;
+  margin-right: 50%;
+}
+
+.landing-text-container {
+  width: 40%;
+  max-height: 37dvh;
+  min-height: 15cqw;
+  margin-bottom: 40px;
+}
+
+.landing-h1-size {
+  font-size: 5cqw;
+}
+
+.landing-font-size {
+  font-size: 2cqw;
+}
+
+.font-white {
+  color: rgba(255, 255, 255, 0.959);
+}
+
+.font-light-gray {
+  color: lightgray;
+}

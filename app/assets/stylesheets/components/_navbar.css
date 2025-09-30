@@ -12,6 +12,7 @@
   background-color: rgb(5 44 101);
   border-bottom: 1px solid black;
   box-shadow: 0px 2px 15px black;
+  margin-bottom: 15px;
 }
 
 .txt-white {
@@ -30,7 +31,6 @@
 .my-navbar-nav {
   --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 0.5rem;
-    --bs-nav-link-font-weight: ;
     --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
     --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
     display: flex;
@@ -40,4 +40,8 @@
 
 .nav-item {
   margin-right: 15px;
+}
+
+.margin-left {
+  margin-left: 20px;
 }

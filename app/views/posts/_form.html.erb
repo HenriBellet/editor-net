@@ -1,12 +1,18 @@
-<%= form_with(model: @post) do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br><br>
+<%= form_with(model: @post, local: true, html: { multipart: true }) do |f| %>
+  <div class="mb-3">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
 
-  <%= f.label :content %><br>
-  <%= f.text_area :content %><br><br>
+  <div class="mb-3">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
 
-  <%= f.label :user_id %> (temporary until auth)<br>
-  <%= f.number_field :user_id %><br><br>
+  <div class="mb-3">
+    <%= f.label :video, "Upload a video" %>
+    <%= f.file_field :video, accept: "video/*", class: "form-control" %>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit "Create Post", class: "btn btn-primary" %>
 <% end %>

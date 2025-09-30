@@ -1,0 +1,19 @@
+<% content_for :hide_navbar, true %>          <!-- hides the navbar on this page -->
+<% content_for :body_class, "landing" %>      <!-- optional: page-specific body class -->
+
+<div class="hero">
+  <div class="landing-page-wrap">
+    <div class="landing-top-container">
+      <%= link_to "EditorNet", root_path, class: "landing-big-link font-white" %>
+      <%= link_to "Home", home_path, class: "landing-link font-light-gray" %>
+      <%= link_to "Find Video Editors", index_path, class: "landing-link font-light-gray" %>
+      <%= link_to "Sign Up", root_path, class: "landing-link font-light-gray" %>
+    </div>
+    <div class="landing-text-container">
+      <h1 class="landing-h1-size font-white">Find the Perfect Video Editor for Your Business</h1>
+    </div>
+    <div class="landing-text-container">
+      <p class="landing-font-size font-light-gray">Connect with skilled video editors to bring your projects to life.</p>
+    </div>
+  </div>
+</div>

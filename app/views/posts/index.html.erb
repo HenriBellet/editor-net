@@ -1,17 +1,26 @@
-<div>
-  <h1>Posts</h1>
-</div>
+<div class="page-wrap">
+  <div>
+    <h1>Find Video Editors</h1>
+  </div>
 
-<div>
-  <%= link_to "New Post", new_post_path %>
-</div>
-
-<div>
-  <ul>
-    <% @posts.each do |p| %>
-      <li>
-        <%= link_to p.title, p %> — <%= p.user&.username || "No user" %>
-      </li>
-    <% end %>
-  </ul>
+  <div>
+    <ul class="cards-list">
+      <% @posts.each do |p| %>
+        <li>
+          <div class="post-card">
+            <% if p.video.attached? %>
+              <%= video_tag url_for(p.video),
+                    class: "hover-play",
+                    muted: true,            # required for autoplay
+                    loop: true,
+                    playsinline: true,
+                    preload: "metadata",
+                    controls: false %>
+            <% end %>
+            <%= link_to p.title, p %> — <%= p.user&.username || "No user" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

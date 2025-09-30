@@ -18,7 +18,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar'%>
+    <% unless content_for?(:hide_navbar) %>
+      <%= render "layouts/navbar" %>
+    <% end %>
     <%= yield %>
     <!-- Bootstrap 5 JS (includes Popper, needed for dropdown/toggler) -->
     <script
