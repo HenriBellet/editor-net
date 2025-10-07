@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_one_attached :video
 
-  validate :acceptable_video
+  validate :title, :acceptable_video
 
   def acceptable_video
     return unless video.attached?

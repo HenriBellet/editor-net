@@ -10,6 +10,18 @@
 
 <p>By: <%= @post.user&.username %></p>
 
+<% if user_signed_in? && @post.user == current_user %>
+  <%= link_to "Edit", edit_post_path(@post) %>
+  <%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Delete?" } %>
+<% end %>
+
+<h3>Add a comment</h3>
+<%= form_with(model: [@post, @comment]) do |f| %>
+  <%= f.text_area :content %><br>
+  <%= f.number_field :user_id, placeholder: "User ID (temp)" %><br>
+  <%= f.submit "Add Comment" %>
+<% end %>
+
 <h2>Comments</h2>
 <ul>
   <% @post.comments.each do |c| %>
@@ -19,10 +31,3 @@
     </li>
   <% end %>
 </ul>
-
-<h3>Add a comment</h3>
-<%= form_with(model: [@post, @comment]) do |f| %>
-  <%= f.text_area :content %><br>
-  <%= f.number_field :user_id, placeholder: "User ID (temp)" %><br>
-  <%= f.submit "Add Comment" %>
-<% end %>
